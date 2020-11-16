@@ -14,7 +14,6 @@ CONFIG_BUSYBOX_CONFIG_LSPCI=y
 CONFIG_BUSYBOX_CONFIG_LSUSB=y
 CONFIG_BUSYBOX_CONFIG_MPSTAT=y
 CONFIG_DEBUG=y
-# CONFIG_DRIVER_11AC_SUPPORT is not set
 # CONFIG_DRIVER_11W_SUPPORT is not set
 # CONFIG_DRIVER_WEXT_SUPPORT is not set
 CONFIG_GCC_USE_VERSION_5=y
@@ -87,6 +86,7 @@ CONFIG_PACKAGE_kmod-fs-exfat=m
 # CONFIG_PACKAGE_kmod-hermes-plx is not set
 # CONFIG_PACKAGE_kmod-hwmon-pwmfan is not set
 # CONFIG_PACKAGE_kmod-i2c-gpio-custom is not set
+CONFIG_PACKAGE_kmod-input-gpio-keys=m
 # CONFIG_PACKAGE_kmod-ipt-account is not set
 # CONFIG_PACKAGE_kmod-ipt-chaos is not set
 # CONFIG_PACKAGE_kmod-ipt-compat-xtables is not set
@@ -115,7 +115,6 @@ CONFIG_PACKAGE_kmod-fs-exfat=m
 # CONFIG_PACKAGE_kmod-iwl3945 is not set
 # CONFIG_PACKAGE_kmod-iwl4965 is not set
 # CONFIG_PACKAGE_kmod-iwlwifi is not set
-CONFIG_PACKAGE_kmod-lib-crc-ccitt=m
 # CONFIG_PACKAGE_kmod-lib80211 is not set
 # CONFIG_PACKAGE_kmod-libertas-sdio is not set
 # CONFIG_PACKAGE_kmod-libertas-spi is not set
@@ -128,17 +127,10 @@ CONFIG_PACKAGE_kmod-lib-crc-ccitt=m
 # CONFIG_PACKAGE_kmod-mwl8k is not set
 # CONFIG_PACKAGE_kmod-net-prism54 is not set
 # CONFIG_PACKAGE_kmod-net-rtl8192su is not set
-CONFIG_PACKAGE_kmod-nls-base=y
-CONFIG_PACKAGE_kmod-nls-cp437=y
-CONFIG_PACKAGE_kmod-nls-iso8859-1=y
-CONFIG_PACKAGE_kmod-nls-utf8=y
 # CONFIG_PACKAGE_kmod-owl-loader is not set
 # CONFIG_PACKAGE_kmod-p54-common is not set
 # CONFIG_PACKAGE_kmod-p54-pci is not set
 # CONFIG_PACKAGE_kmod-p54-usb is not set
-CONFIG_PACKAGE_kmod-ppp=m
-CONFIG_PACKAGE_kmod-pppoe=m
-CONFIG_PACKAGE_kmod-pppox=m
 # CONFIG_PACKAGE_kmod-rt2400-pci is not set
 # CONFIG_PACKAGE_kmod-rt2500-pci is not set
 # CONFIG_PACKAGE_kmod-rt2500-usb is not set
@@ -155,6 +147,8 @@ CONFIG_PACKAGE_kmod-rtc-pcf2123=m
 CONFIG_PACKAGE_kmod-rtc-pcf8563=m
 CONFIG_PACKAGE_kmod-rtc-pt7c4338=m
 CONFIG_PACKAGE_kmod-rtc-rs5c372a=m
+CONFIG_PACKAGE_kmod-rtk-uart1=y
+CONFIG_PACKAGE_kmod-rtk-uart2=y
 # CONFIG_PACKAGE_kmod-rtl8180 is not set
 # CONFIG_PACKAGE_kmod-rtl8187 is not set
 # CONFIG_PACKAGE_kmod-rtl8192ce is not set
@@ -163,17 +157,20 @@ CONFIG_PACKAGE_kmod-rtc-rs5c372a=m
 # CONFIG_PACKAGE_kmod-rtl8192se is not set
 # CONFIG_PACKAGE_kmod-rtl8xxxu is not set
 CONFIG_PACKAGE_kmod-rxrpc=m
-CONFIG_PACKAGE_kmod-slhc=m
+CONFIG_PACKAGE_kmod-scsi-core=y
+CONFIG_PACKAGE_kmod-usb-core=y
+CONFIG_PACKAGE_kmod-usb-ehci=y
+CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-storage=y
+CONFIG_PACKAGE_kmod-usb2=y
 # CONFIG_PACKAGE_kmod-wifidog-ng is not set
 # CONFIG_PACKAGE_kmod-zd1211rw is not set
 # CONFIG_PACKAGE_libatomic is not set
 # CONFIG_PACKAGE_libertas-sdio-firmware is not set
 # CONFIG_PACKAGE_libertas-spi-firmware is not set
 # CONFIG_PACKAGE_libertas-usb-firmware is not set
-# CONFIG_PACKAGE_libevdev is not set
 # CONFIG_PACKAGE_libgomp is not set
 CONFIG_PACKAGE_libiptc=y
-CONFIG_PACKAGE_libiwinfo=y
 CONFIG_PACKAGE_libiwinfo-lua=y
 CONFIG_PACKAGE_liblua=y
 CONFIG_PACKAGE_liblucihttp=y
@@ -181,8 +178,6 @@ CONFIG_PACKAGE_liblucihttp-lua=y
 CONFIG_PACKAGE_librt=y
 # CONFIG_PACKAGE_libstdcpp is not set
 CONFIG_PACKAGE_libubus-lua=y
-# CONFIG_PACKAGE_libudev-fbsd is not set
-# CONFIG_PACKAGE_libwrap is not set
 CONFIG_PACKAGE_lua=y
 CONFIG_PACKAGE_luci=y
 CONFIG_PACKAGE_luci-app-firewall=y
@@ -197,6 +192,7 @@ CONFIG_PACKAGE_luci-theme-bootstrap=y
 # CONFIG_PACKAGE_mt7601u-firmware is not set
 # CONFIG_PACKAGE_mwifiex-pcie-firmware is not set
 # CONFIG_PACKAGE_mwl8k-firmware is not set
+CONFIG_PACKAGE_nand-utils=y
 # CONFIG_PACKAGE_prism54-firmware is not set
 # CONFIG_PACKAGE_rt2800-pci-firmware is not set
 # CONFIG_PACKAGE_rt2800-usb-firmware is not set
@@ -207,13 +203,13 @@ CONFIG_PACKAGE_luci-theme-bootstrap=y
 # CONFIG_PACKAGE_rtl8192de-firmware is not set
 # CONFIG_PACKAGE_rtl8192se-firmware is not set
 # CONFIG_PACKAGE_rtl8192su-firmware is not set
+CONFIG_PACKAGE_ser2net=y
 # CONFIG_PACKAGE_snapshot-tool is not set
 # CONFIG_PACKAGE_uboot-envtools is not set
 CONFIG_PACKAGE_uhttpd=y
 CONFIG_PACKAGE_uhttpd-mod-ubus=y
 # CONFIG_PACKAGE_umbim is not set
 # CONFIG_PACKAGE_uqmi is not set
-# CONFIG_PACKAGE_usbip is not set
 # CONFIG_PACKAGE_wwan is not set
 CONFIG_PKG_CC_STACKPROTECTOR_NONE=y
 CONFIG_STRIP_ARGS="--strip-all"
@@ -226,6 +222,7 @@ CONFIG_VERSION_BUG_URL=""
 CONFIG_VERSION_CODE=""
 CONFIG_VERSION_DIST="OpenWrt-8devices-rtk"
 CONFIG_VERSION_FILENAMES=y
+CONFIG_VERSION_HOME_URL=""
 CONFIG_VERSION_HWREV=""
 CONFIG_VERSION_MANUFACTURER="Xiaomi"
 CONFIG_VERSION_MANUFACTURER_URL="http://www.mi.com"
@@ -233,5 +230,3 @@ CONFIG_VERSION_NUMBER="v1.4"
 CONFIG_VERSION_PRODUCT="lumi.gateway.mgl03"
 CONFIG_VERSION_REPO="http://pkg.8devices.com/kinkan/%v"
 CONFIG_VERSION_SUPPORT_URL=""
-CONFIG_WPA_SUPPLICANT_INTERNAL=y
-
